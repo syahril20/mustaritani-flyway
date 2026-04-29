@@ -8,5 +8,7 @@ CREATE TABLE IF NOT EXISTS public.users
     role       VARCHAR(50) DEFAULT 'user' CHECK (role IN ('admin', 'user')),
     is_active  BOOLEAN     DEFAULT true,
     created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
+    created_by VARCHAR(100) DEFAULT 'system',
+    updated_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_by VARCHAR(100) DEFAULT 'system'
 );
